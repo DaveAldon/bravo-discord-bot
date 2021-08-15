@@ -1,9 +1,10 @@
+// Prefix used for bot commands
 type BotConfig = {
-  prefix: string  /** Prefix used for bot commands. */
+  prefix: string
 };
 
 const config: BotConfig = {
-  prefix: ">"
+  prefix: "!"
 };
 
 export default config;
