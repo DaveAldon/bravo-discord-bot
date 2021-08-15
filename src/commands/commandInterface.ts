@@ -7,9 +7,9 @@ export default interface Command {
    */
   readonly commandNames: string[];
 
-  /** Usage documentation. */
+  // Usage documentation
   help(commandPrefix: string): string;
 
-  /** Execute the command. */
+  // Execute the command
   run(parsedUserCommand: Message): Promise<void>;
 }
