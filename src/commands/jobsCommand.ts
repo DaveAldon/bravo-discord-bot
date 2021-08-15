@@ -36,11 +36,16 @@ const getJobs = async () => {
         let returnMessage = "";
         const response = await got(vgmUrl);
         const dom = new JSDOM(response.body);
-        const nodeList = [...dom.window.document.querySelectorAll('a')];
+        const nodeList = [...dom.window.document.querySelectorAll('a')].filter(isJobLink)
 
-        nodeList.filter(isJobLink).forEach(link => {
+        nodeList.forEach(link => {
             returnMessage += `${link.textContent} - ${link.href}\n`;
         });
+        if(returnMessage.length <= 1) {
+            returnMessage = "Sorry, Bravo doesn't have any job openings right now.";
+        } else {
+            returnMessage = `\n\nBravo is hiring **${nodeList.length}** different positions right now!\n\n${returnMessage}`;
+        }
         return returnMessage;
     }
     return result();
