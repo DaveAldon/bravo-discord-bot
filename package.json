@@ -1,5 +1,5 @@
 {
-  "name": "hive-greeter",
+  "name": "bravo-bentley",
   "version": "1.0.0",
   "description": "Discord bot written in Typescript and discord.js hosted on Heroku",
   "main": "index.js",
