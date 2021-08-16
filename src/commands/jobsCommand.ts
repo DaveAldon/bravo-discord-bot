@@ -9,7 +9,6 @@ export class JobsCommand implements Command {
     }
 
     async run(message: Message): Promise<void> {
-        //await message.reply("we got jobs!");
         message.reply(await getJobs())
     }
 }
@@ -19,18 +18,18 @@ interface ILink {
     textContent: string;
 }
 
+export const isJobLink = (link: ILink) => {
+    if (typeof link.href === 'undefined') { return false }
+    if (link.textContent.length <= 1) { return false }
+    return link.href.includes('.pdf');
+};
+
 const getJobs = async () => {
     const got = require('got');
     const jsdom = require("jsdom");
     const { JSDOM } = jsdom;
 
     const vgmUrl = "https://www.bravolt.com/careers";
-
-    const isJobLink = (link: ILink) => {
-        if (typeof link.href === 'undefined') { return false }
-        if (link.textContent.length <= 1) { return false }
-        return link.href.includes('.pdf');
-    };
 
     const result = async () => {
         let returnMessage = "";
@@ -41,7 +40,7 @@ const getJobs = async () => {
         nodeList.forEach(link => {
             returnMessage += `${link.textContent} - ${link.href}\n`;
         });
-        if(returnMessage.length <= 1) {
+        if (returnMessage.length <= 1) {
             returnMessage = "Sorry, Bravo doesn't have any job openings right now.";
         } else {
             returnMessage = `\n\nBravo is hiring **${nodeList.length}** different positions right now!\n\n${returnMessage}`;

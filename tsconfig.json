@@ -1,6 +1,7 @@
 {
   "exclude": [
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "coverage"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */

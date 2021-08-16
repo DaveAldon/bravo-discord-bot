@@ -12,7 +12,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node build/index.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -63,6 +63,14 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "coverageThreshold": {
+        "global": {
+            "branches": 50,
+            "functions": 50,
+            "lines": 50,
+            "statements": 50
+        }
+    }
   }
 }

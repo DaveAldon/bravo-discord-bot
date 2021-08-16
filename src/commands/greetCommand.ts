@@ -9,6 +9,6 @@ export class GreetCommand implements Command {
   }
 
   async run(message: Message): Promise<void> {
-    await message.reply("hello, User!!!");
+    await message.reply("hello, User!");
   }
 }
