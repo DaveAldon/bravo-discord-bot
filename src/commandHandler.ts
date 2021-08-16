@@ -1,16 +1,19 @@
 import { Message } from "discord.js";
-import { GreetCommand, JobsCommand } from "./commands";
+import { HelpCommand } from "./commands/helpCommand";
+import { GreetCommand, JobsCommand, PuppyCommand } from "./commands";
 import Command from "./commands/commandInterface";
 import { CommandParser } from "./models/commandParser";
 
 export default class CommandHandler {
   private commands: Command[];
   private readonly prefix: string;
-  
+
   constructor(prefix: string) {
     const commandClasses = [
       GreetCommand,
-      JobsCommand
+      JobsCommand,
+      HelpCommand,
+      PuppyCommand
     ];
     this.commands = commandClasses.map(commandClass => new commandClass());
     this.prefix = prefix;
@@ -22,7 +25,7 @@ export default class CommandHandler {
       return;
     }
 
-    //message.reply(`Hive Greeter recieved '${this.echoMessage(message)}' from ${message.author.tag}`);
+    //message.reply(`Bentley recieved '${this.echoMessage(message)}' from ${message.author.tag}`);
     const commandParser = new CommandParser(message, this.prefix);
     const matchedCommand = this.commands.find(command => command.commandNames.includes(commandParser.parsedCommandName));
 

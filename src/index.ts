@@ -14,7 +14,7 @@ const client = new Discord.Client();
 //////////////////////////////////////////////////////////////////
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', (request: Request, response: Response) => {
+app.use('/', (_request: Request, response: Response) => {
   response.sendStatus(200);
 });
 
@@ -25,7 +25,7 @@ const commandHandler = new CommandHandler(config.prefix);
 //////////////////////////////////////////////////////////////////
 // Discord Events: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-channelCreate
 
-client.on("ready", () => { console.log("Hive Greeter has started"); });
+client.on("ready", () => { console.log("Bravo Bentley has started"); });
 client.on("message", (message: Message) => { commandHandler.handleMessage(message); });
 client.on("error", e => { console.error("Discord client error!", e); });
 

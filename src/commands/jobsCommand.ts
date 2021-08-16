@@ -6,7 +6,7 @@ export class JobsCommand implements Command {
     commandNames = ["jobs", "job"];
 
     help(commandPrefix: string): string {
-        return `Use ${commandPrefix}${this.commandNames[0]} to get the latest Bravo job openings.`;
+        return `${commandPrefix}${this.commandNames[0]} - get the latest Bravo job openings.`;
     }
 
     async run(message: Message): Promise<void> {

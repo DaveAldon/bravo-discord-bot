@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1629142845455" clover="3.2.0">
-  <project timestamp="1629142845455" name="All files">
-    <metrics statements="26" coveredstatements="26" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6" elements="36" coveredelements="36" complexity="0" loc="26" ncloc="26" packages="2" files="3" classes="3"/>
+<coverage generated="1629151325562" clover="3.2.0">
+  <project timestamp="1629151325562" name="All files">
+    <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="15" elements="83" coveredelements="83" complexity="0" loc="64" ncloc="64" packages="5" files="10" classes="10"/>
     <package name="commands">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="greetCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/greetCommand.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="helpCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/helpCommand.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
       <file name="jobsCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/jobsCommand.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="puppyCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/puppyCommand.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="commands.greet">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="randomGreeting.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/greet/randomGreeting.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="commands.help">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="generateHelpMessage.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/help/generateHelpMessage.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
       </file>
     </package>
     <package name="commands.jobs">
@@ -41,6 +93,22 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="8" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="commands.puppies">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="getRandomPuppy.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/puppies/getRandomPuppy.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="puppyIds.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/puppies/puppyIds.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
   </project>
