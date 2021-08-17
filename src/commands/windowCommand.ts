@@ -14,5 +14,5 @@ export class WindowCommand implements Command {
 }
 
 export const testable = () => {
-    return `https://raw.githubusercontent.com/DaveAldon/bravo-discord-bot/main/repoResources/street.jpg`
+    return `https://bit.ly/3iQR2F0`
 }
