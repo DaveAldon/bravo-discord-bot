@@ -7,3 +7,4 @@ export * from './greetCommand';
 export * from './helpCommand';
 export * from './jobsCommand';
 export * from './puppyCommand';
+export * from './windowCommand';

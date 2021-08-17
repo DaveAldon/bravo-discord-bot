@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1629151325562" clover="3.2.0">
-  <project timestamp="1629151325562" name="All files">
-    <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="15" elements="83" coveredelements="83" complexity="0" loc="64" ncloc="64" packages="5" files="10" classes="10"/>
+<coverage generated="1629233514507" clover="3.2.0">
+  <project timestamp="1629233514507" name="All files">
+    <metrics statements="89" coveredstatements="89" conditionals="20" coveredconditionals="20" methods="19" coveredmethods="19" elements="128" coveredelements="128" complexity="0" loc="89" ncloc="89" packages="7" files="13" classes="13"/>
     <package name="commands">
-      <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <metrics statements="32" coveredstatements="32" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="11"/>
       <file name="greetCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/greetCommand.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
@@ -21,12 +21,18 @@
         <line num="13" count="1" type="stmt"/>
       </file>
       <file name="jobsCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/jobsCommand.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
       </file>
       <file name="puppyCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/puppyCommand.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -35,6 +41,15 @@
         <line num="6" count="4" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="windowCommand.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/windowCommand.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
     </package>
     <package name="commands.greet">
@@ -55,8 +70,8 @@
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
@@ -66,33 +81,37 @@
       </file>
     </package>
     <package name="commands.jobs">
-      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <metrics statements="25" coveredstatements="25" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
       <file name="getJobs.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/jobs/getJobs.ts">
-        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <metrics statements="22" coveredstatements="22" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="31" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="6" type="cond" truecount="5" falsecount="0"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
       </file>
       <file name="isJobLink.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/jobs/isJobLink.ts">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="7" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="14" type="stmt"/>
       </file>
     </package>
     <package name="commands.puppies">
@@ -109,6 +128,27 @@
       <file name="puppyIds.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/commands/puppies/puppyIds.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="config">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="botConfig.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/config/botConfig.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="models">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="commandParser.ts" path="/Users/davidcrawford/Documents/bravo-discord-bot/src/models/commandParser.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
       </file>
     </package>
   </project>

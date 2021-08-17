@@ -3,6 +3,7 @@ import { HelpCommand } from "./commands/helpCommand";
 import { GreetCommand, JobsCommand, PuppyCommand } from "./commands";
 import Command from "./commands/commandInterface";
 import { CommandParser } from "./models/commandParser";
+import { WindowCommand } from "./commands/windowCommand";
 
 export default class CommandHandler {
   private commands: Command[];
@@ -13,7 +14,8 @@ export default class CommandHandler {
       GreetCommand,
       JobsCommand,
       HelpCommand,
-      PuppyCommand
+      PuppyCommand,
+      WindowCommand
     ];
     this.commands = commandClasses.map(commandClass => new commandClass());
     this.prefix = prefix;

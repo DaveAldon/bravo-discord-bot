@@ -6,7 +6,7 @@ export class GreetCommand implements Command {
   commandNames = ["greet", "hello"];
 
   help(commandPrefix: string): string {
-    return `${commandPrefix}greet - get a greeting.`;
+    return `\`${commandPrefix}greet\` - get a greeting.`;
   }
 
   async run(message: Message): Promise<void> {

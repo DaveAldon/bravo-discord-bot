@@ -2,13 +2,13 @@ import { PuppyCommand } from "../puppyCommand"
 import { GreetCommand } from "../greetCommand"
 import { HelpCommand } from "../helpCommand"
 import { JobsCommand } from "../jobsCommand"
+import config from "../../config/botConfig"
 
 export const generateHelpMessage = (): string => {
-    const commandPrefix = "!"
     let returnMessage = `Here is a list of commands that I currently support, and their descriptions:\n\n`
-    returnMessage += `${new JobsCommand().help(commandPrefix)}\n`
-    returnMessage += `${new GreetCommand().help(commandPrefix)}\n`
-    returnMessage += `${new PuppyCommand().help(commandPrefix)}\n`
-    returnMessage += `${new HelpCommand().help(commandPrefix)}`
+    returnMessage += `${new JobsCommand().help(config.prefix)}\n`
+    returnMessage += `${new GreetCommand().help(config.prefix)}\n`
+    returnMessage += `${new PuppyCommand().help(config.prefix)}\n`
+    returnMessage += `${new HelpCommand().help(config.prefix)}`
     return returnMessage;
 }
