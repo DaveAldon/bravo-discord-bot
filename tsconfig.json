@@ -1,7 +1,8 @@
 {
   "exclude": [
     "src/**/*.test.ts",
-    "coverage"
+    "coverage",
+    "prettierrc.js"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
