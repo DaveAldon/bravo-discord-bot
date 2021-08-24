@@ -12,7 +12,6 @@ export const rolesRemove = async (message: Message) => {
         `)
 
     const msg = message.channel.send(embed);
-
     msg.then(async (m) => {
         for (const role in storedRoles) {
             m.react(role)
@@ -34,7 +33,8 @@ export const rolesRemove = async (message: Message) => {
         role && member?.roles.remove(role);
     });
 
-    collector.on('end', _collected => {
-        onEnd(message);
+    collector.on('end', async collected => {
+        (await msg).delete({ timeout: 1000 })
+        onEnd(message, collected);
     });
 }

@@ -12,7 +12,6 @@ export const rolesAdd = async (message: Message) => {
         `)
 
     const msg = message.channel.send(embed)
-
     msg.then(async (m) => {
         for (const role in storedRoles) {
             m.react(role)
@@ -34,7 +33,8 @@ export const rolesAdd = async (message: Message) => {
         role && member?.roles.add(role);
     });
 
-    collector.on('end', collected => {
-        onEnd(message);
+    collector.on('end', async collected => {
+        (await msg).delete({ timeout: 1000 })
+        onEnd(message, collected);
     });
 }

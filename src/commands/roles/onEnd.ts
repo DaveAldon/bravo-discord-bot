@@ -1,6 +1,6 @@
 import Discord, { Message } from "discord.js";
 
-export const onEnd = (message: Message) => {
+export const onEnd = (message: Message, _collected: { size: number; }) => {
     const commandString = "`!roles`"
     const removeCommandString = "`!roles remove`"
     const outputEmbed = new Discord.MessageEmbed()
