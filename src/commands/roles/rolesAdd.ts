@@ -35,6 +35,6 @@ export const rolesAdd = async (message: Message) => {
     });
 
     collector.on('end', collected => {
-        onEnd(message, collected);
+        onEnd(message);
     });
 }

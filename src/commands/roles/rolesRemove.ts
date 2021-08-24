@@ -34,7 +34,7 @@ export const rolesRemove = async (message: Message) => {
         role && member?.roles.remove(role);
     });
 
-    collector.on('end', collected => {
-        onEnd(message, collected);
+    collector.on('end', _collected => {
+        onEnd(message);
     });
 }
