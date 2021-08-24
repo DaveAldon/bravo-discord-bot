@@ -2,6 +2,7 @@ import { PuppyCommand } from "../puppyCommand"
 import { GreetCommand } from "../greetCommand"
 import { HelpCommand } from "../helpCommand"
 import { JobsCommand } from "../jobsCommand"
+import { RolesCommand } from "../rolesCommand"
 import config from "../../config/botConfig"
 
 export const generateHelpMessage = (): string => {
@@ -9,6 +10,7 @@ export const generateHelpMessage = (): string => {
     returnMessage += `${new JobsCommand().help(config.prefix)}\n`
     returnMessage += `${new GreetCommand().help(config.prefix)}\n`
     returnMessage += `${new PuppyCommand().help(config.prefix)}\n`
+    returnMessage += `${new RolesCommand().help(config.prefix)}\n`
     returnMessage += `${new HelpCommand().help(config.prefix)}`
     return returnMessage;
 }
