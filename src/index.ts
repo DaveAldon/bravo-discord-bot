@@ -28,6 +28,5 @@ const commandHandler = new CommandHandler(config.prefix);
 client.on("ready", () => { console.log("Bravo Bentley has started"); });
 client.on("message", (message: Message) => { commandHandler.handleMessage(message); });
 client.on("error", e => { console.error("Discord client error!", e); });
-
 client.login(DISCORD_TOKEN);
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));

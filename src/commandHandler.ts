@@ -4,6 +4,7 @@ import { GreetCommand, JobsCommand, PuppyCommand } from "./commands";
 import Command from "./commands/commandInterface";
 import { CommandParser } from "./models/commandParser";
 import { WindowCommand } from "./commands/windowCommand";
+import { RolesCommand } from "./commands/rolesCommand";
 
 export default class CommandHandler {
   private commands: Command[];
@@ -15,7 +16,8 @@ export default class CommandHandler {
       JobsCommand,
       HelpCommand,
       PuppyCommand,
-      WindowCommand
+      WindowCommand,
+      RolesCommand
     ];
     this.commands = commandClasses.map(commandClass => new commandClass());
     this.prefix = prefix;
@@ -26,8 +28,6 @@ export default class CommandHandler {
     if (message.author.bot || !this.isCommand(message)) {
       return;
     }
-
-    //message.reply(`Bentley recieved '${this.echoMessage(message)}' from ${message.author.tag}`);
     const commandParser = new CommandParser(message, this.prefix);
     const matchedCommand = this.commands.find(command => command.commandNames.includes(commandParser.parsedCommandName));
 
