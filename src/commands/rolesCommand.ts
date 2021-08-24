@@ -9,7 +9,7 @@ export class RolesCommand implements Command {
     commandNames = ["roles", "role"];
 
     help(commandPrefix: string): string {
-        return `\`${commandPrefix}${this.commandNames[0]}\` - get the latest Bravo job openings. You can also add a job filter like this: \`!jobs senior\``;
+        return `\`${commandPrefix}${this.commandNames[0]}\` - get a list of skills. React to them as instructed to receive a Discord Role! If you want to remove a role, check out this command: \`!role remove\``;
     }
 
     async run(message: Message): Promise<void> {
