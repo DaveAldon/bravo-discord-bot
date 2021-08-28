@@ -32,7 +32,8 @@ export default class CommandHandler {
     const matchedCommand = this.commands.find(command => command.commandNames.includes(commandParser.parsedCommandName));
 
     if (!matchedCommand) {
-      await message.reply(`I don't recognize that command. Try !help.`);
+      // Disabled for now, it sends too many messages that aren't meant to be commands
+      //await message.reply(`I don't recognize that command. Try !help.`);
     } else {
       await matchedCommand.run(message).catch(error => {
         message.reply(`'${this.echoMessage(message)}' failed because of ${error}`);
