@@ -19,10 +19,11 @@ Welcome to the Bentley readme! Bentley was made for [Bravo LT](https://www.bravo
 ### How to run
 
 1. Clone/Fork the repo
-2. Create an .env file based on the .env.example, using your own Discord bot api (more on that later)
+2. Create an .env file based on the .env.example, using your own Discord bot api
 3. `cd` into the repo directory, and run `npm run start` to host locally
 4. Invite your bot to your Discord server
 5. Check if it's online, and start running commands!
+
    <img src="repoResources/onlineScreenshot.png" />
 
 ### Commands
