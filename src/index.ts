@@ -37,7 +37,8 @@ const commandHandler = new CommandHandler(config.prefix);
 
 client.once('ready', () => {
   console.log('Bravo Bentley has started!');
-  registerCommands(commandHandler);
+  // Only needs to be run once
+  //registerCommands(commandHandler);
 });
 client.on('interactionCreate', (interaction: any) => {
   commandHandler.handleInteraction(interaction);

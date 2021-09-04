@@ -39,6 +39,7 @@ export class RolesCommand implements Command {
     interaction.reply('Begin role management:');
     try {
       const filter = `${interaction.options.data[0].value}`;
+      console.log('FILTER', filter);
       if (filter === 'remove') {
         interaction.channel &&
           interaction.guild &&

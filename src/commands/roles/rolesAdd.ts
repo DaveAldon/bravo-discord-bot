@@ -17,7 +17,7 @@ export const rolesAdd = async (channel: TextBasedChannels, guild: Guild) => {
     }
   });
 
-  const filter = (_reaction: any, _user: any) => {
+  const filter = () => {
     return true;
   };
 
