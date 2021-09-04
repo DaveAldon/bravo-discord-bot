@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Discord bot written in Typescript and discord.js hosted on Heroku",
   "main": "index.js",
+  "engines": {
+    "node": "16.7.0"
+  },
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
