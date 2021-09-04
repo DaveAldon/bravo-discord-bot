@@ -11,8 +11,10 @@ export const registerCommands = (commandHandler: CommandHandler) => {
   });
   (async () => {
     try {
-      await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
-      //await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildID), { body: commands });
+      //await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
+      await rest.put(Routes.applicationGuildCommands(CLIENT_ID, '844365328574054420'), {
+        body: commands,
+      });
     } catch (error) {
       console.error(error);
     }
