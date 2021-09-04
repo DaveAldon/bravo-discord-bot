@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+import { BaseCommandInteraction, Message } from 'discord.js';
 
 export default interface Command {
   /**
@@ -6,10 +6,11 @@ export default interface Command {
    * The first name in the list is the primary command name.
    */
   readonly commandNames: string[];
-
+  readonly data?: any;
   // Usage documentation
   help(commandPrefix: string): string;
 
   // Execute the command
   run(parsedUserCommand: Message): Promise<void>;
+  runInteraction(parsedUserCommand: BaseCommandInteraction): Promise<void>;
 }

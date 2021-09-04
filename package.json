@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/DaveAldon/bravo-discord-bot/blob/main/README.md",
   "devDependencies": {
+    "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
     "eslint": "^7.4.0",
@@ -39,17 +40,22 @@
     "prettier": "1.19.1"
   },
   "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
     "@types/express": "^4.17.7",
-    "@types/node": "^14.0.20",
-    "discord.js": "^12.2.0",
+    "@types/jest": "^26.0.24",
+    "axios": "^0.21.1",
+    "discord-api-types": "^0.22.0",
+    "discord-slash-commands-client": "^1.2.1",
+    "discord.js": "^13.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "got": "^11.8.2",
-    "jsdom": "^16.4.0",
-    "rimraf": "^3.0.2",
-    "@types/jest": "^26.0.24",
     "jest": "^27.0.6",
+    "jsdom": "^16.4.0",
     "nodemon": "^2.0.4",
+    "requests": "^0.3.0",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.0.4",
     "ts-node": "^8.10.2",
     "typescript": "^4.3.5"
@@ -68,12 +74,12 @@
       "node"
     ],
     "coverageThreshold": {
-        "global": {
-            "branches": 50,
-            "functions": 50,
-            "lines": 50,
-            "statements": 50
-        }
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
     }
   }
 }
