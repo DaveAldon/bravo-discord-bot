@@ -34,4 +34,3 @@ When Bentley is online in your server, try `!help` to see all of the commands, a
 ### Credit
 
 - Thanks to Bravo LT for having a [memoji page](https://www.bravolt.com/about-us) so I could grab a Bentley icon based on the very real dog
-- Thanks to [MidasXIV](https://github.com/MidasXIV) for providing an excellent base for Discord.js interaction. Nobody wants to reinvent the wheel
