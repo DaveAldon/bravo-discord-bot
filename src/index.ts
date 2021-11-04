@@ -1,9 +1,8 @@
 import express, { Request, Response } from 'express';
-import { Message, Intents, Client } from 'discord.js';
-import { DISCORD_TOKEN, CLIENT_ID } from './config/secrets';
-import CommandHandler from './commandHandler';
-import config from './config/botConfig';
-import { registerCommands } from './slashCommands';
+import { Intents, Client, Interaction } from 'discord.js';
+import { DISCORD_TOKEN, OWNER } from './config/secrets';
+import { commands } from './slashCommands/registerCommands';
+import { deleteCommands, deployCommands } from './slashCommands/deployCommands';
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,32 +18,48 @@ const client = new Client({
   },
 });
 
-//////////////////////////////////////////////////////////////////
-//             EXPRESS SERVER SETUP FOR UPTIME ROBOT            //
-//////////////////////////////////////////////////////////////////
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', (_request: Request, response: Response) => {
   response.sendStatus(200);
 });
 
-const commandHandler = new CommandHandler(config.prefix);
-
-//////////////////////////////////////////////////////////////////
-//                    DISCORD CLIENT LISTENERS                  //
-//////////////////////////////////////////////////////////////////
-// Discord Events: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-channelCreate
-
 client.once('ready', () => {
   console.log('Bravo Bentley has started!');
-  // Only needs to be run once
-  //registerCommands(commandHandler);
 });
-client.on('interactionCreate', (interaction: any) => {
-  commandHandler.handleInteraction(interaction);
+client.on('interactionCreate', async (interaction: any) => {
+  if (!interaction.isCommand()) return;
+  const command = commands()[interaction.commandName];
+  try {
+    await command.execute(interaction);
+  } catch (error) {
+    console.error(error);
+    await interaction.reply({
+      content: 'There was an error while executing this command!',
+      ephemeral: true,
+    });
+  }
 });
-client.on('messageCreate', (message: Message) => {
-  commandHandler.handleMessage(message);
+client.on('messageCreate', message => {
+  if (message.author.id !== OWNER) return;
+  if (message.content.startsWith(`!deploy`)) {
+    try {
+      message.guildId && deployCommands(message.guildId);
+    } catch (error) {}
+  }
+
+  if (message.content.startsWith(`!remove`)) {
+    try {
+      const slashCommandName = message.content.split(' ')[1];
+      message.guildId && deleteCommands(message.guildId, slashCommandName);
+    } catch (error) {}
+  }
+});
+// button listeners
+client.on('interactionCreate', async (interaction: Interaction) => {
+  if (!interaction.isSelectMenu()) return;
+  interaction.reply('Thinking...');
+  interaction.deleteReply();
 });
 client.on('error', e => {
   console.error('Discord client error!', e);
