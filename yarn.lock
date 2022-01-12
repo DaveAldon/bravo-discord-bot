@@ -2033,6 +2033,11 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+firebase-dynamic-links@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/firebase-dynamic-links/-/firebase-dynamic-links-1.1.0.tgz#a6b9a2151e56096549fddd3dbf1ea06601f15639"
+  integrity sha512-FaGrjYPsy44S1T+Et9LSLMClLICz8+sZ4w0t1y3BOy+uklkz5C7hOrt/sCYYtrkOEDp3yz55s2yhaARVnSBbHg==
+
 flat-cache@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.0.4.tgz#61b0338302b2fe9f957dcc32fc2a87f1c3048b11"

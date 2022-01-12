@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env' });
 export const CLIENT_ID = '876206083461505025';
 export const DISCORD_TOKEN = process.env['token'] || 'nothing';
+export const FIREBASE_WEB_TOKEN = process.env['firebasewebtoken'] || 'nothing';
 export const OWNER = '197352387755638794';
 export const BOT_NAME = 'Bentley';
 

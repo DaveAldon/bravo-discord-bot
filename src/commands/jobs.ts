@@ -1,5 +1,9 @@
 import { CommandInteraction } from 'discord.js';
 import { SlashCommandBuilder } from '@discordjs/builders';
+import { FirebaseDynamicLinks } from 'firebase-dynamic-links';
+import { FIREBASE_WEB_TOKEN } from '../config/secrets';
+
+const firebaseDynamicLinks = new FirebaseDynamicLinks(FIREBASE_WEB_TOKEN);
 
 export const jobs = () => {
   return {
@@ -13,21 +17,25 @@ export const jobs = () => {
           .setRequired(false)
       ),
     async execute(interaction: CommandInteraction) {
+      await interaction.reply(
+        'https://media1.giphy.com/media/9EmupLytNQLgrQTmxg/giphy.gif?cid=ecf05e479sfd3ukdmrj47p8cff5rx67bsyzzg2wa2fbm0pch&rid=giphy.gif&ct=g'
+      );
+
       const props: IGetJobs = {};
       try {
         props.filter = `${interaction.options.data[0].value}`;
       } catch (e) {}
       // split up the message to bypass the 2k char limit per message
-      const messageArray = await getJobs(props)
-      if(messageArray.length % 2 > 0) messageArray.push("")
+      const messageArray = await getJobs(props);
+      if (messageArray.length % 2 > 0) messageArray.push('');
       const half = Math.floor(messageArray.length / 2);
-      if(messageArray.length > 1) {
-      const firstHalf = messageArray.slice(0, half).join(" ")
-      const secondHalf = messageArray.slice(-half).join(" ")
-      await interaction.reply(firstHalf);
-      interaction.channel?.send(secondHalf)
+      if (messageArray.length > 1) {
+        const firstHalf = messageArray.slice(0, half).join(' ');
+        const secondHalf = messageArray.slice(-half).join(' ');
+        await interaction.editReply(firstHalf);
+        interaction.channel?.send(secondHalf);
       } else {
-        await interaction.reply(messageArray.join(" "));
+        await interaction.editReply(messageArray.join(' '));
       }
     },
   };
@@ -44,18 +52,30 @@ const getJobs = async (props: IGetJobs) => {
   const { JSDOM } = jsdom;
 
   const url = 'https://www.bravolt.com/careers';
-
+  const response = await got(url);
   const result = async () => {
     const returnMessage: string[] = [
       `Sorry, Bravo doesn't have any job openings${(filter && ` that match **${filter}**`) ||
         ''} right now.`,
     ];
-    const response = await got(url);
+
     const dom = new JSDOM(response.body);
     const nodeList = [...dom.window.document.querySelectorAll('a')].filter(isJobLink);
 
-    nodeList.forEach(link => {
-      const line = `${link.textContent} - ${link.href}\n`;
+    for (const link of nodeList) {
+      // Get the shortened url using dynamic links, but limit the rate to not hit the limit of 5 per second
+      await new Promise(resolve => {
+        setTimeout(resolve, 100);
+      });
+      let shortenedLine = await getShortenedUrl(link.href);
+      try {
+        if (!shortenedLine.includes('https://bravolt.page.link')) {
+          shortenedLine = link.href;
+        }
+      } catch (e) {
+        console.log(e);
+      }
+      const line = `${link.textContent} - ${shortenedLine}\n`;
       if (filter) {
         if (link.textContent.toLowerCase().includes(filter.toLowerCase())) {
           returnMessage.push(line);
@@ -63,7 +83,8 @@ const getJobs = async (props: IGetJobs) => {
       } else {
         returnMessage.push(line);
       }
-    });
+    }
+
     if (returnMessage.length > 1) {
       returnMessage[0] = `\n\nBravo is hiring **${returnMessage.length - 1}**${(filter &&
         ` **${filter}**`) ||
@@ -84,4 +105,14 @@ const isJobLink = (link: ILink) => {
     return false;
   }
   return link.href.includes('.pdf');
+};
+
+const getShortenedUrl = async (url: string) => {
+  const { shortLink } = await firebaseDynamicLinks.createLink({
+    dynamicLinkInfo: {
+      domainUriPrefix: 'https://bravolt.page.link',
+      link: url,
+    },
+  });
+  return shortLink;
 };
