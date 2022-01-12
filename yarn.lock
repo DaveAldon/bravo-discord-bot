@@ -4266,6 +4266,13 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+vscode-generate-index-standalone@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/vscode-generate-index-standalone/-/vscode-generate-index-standalone-1.6.0.tgz#ff7d17009e081b4e018dfac67121cf4c5b91cf8f"
+  integrity sha512-J8uLX0yuSYZuDv217XxsjOXLDApHCshRlWrYHEcdUmN0VO73Dqurg4Ff81eQJoy5y0SQ/L/EJwFzZwRAAhITmg==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
 w3c-hr-time@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz#0a89cdf5cc15822df9c360543676963e0cc308cd"

@@ -13,11 +13,11 @@ interface ICommands {
 export const commands = () => {
   return {
     //@index(['../commands/**/*.ts(x)?','!**/*.*.*'], f => `"${f.name}": ${f.name}(),`)
-    bill: bill(),
-    greet: greet(),
-    jobs: jobs(),
-    puppy: puppy(),
-    roles: roles(),
+    "bill": bill(),
+    "greet": greet(),
+    "jobs": jobs(),
+    "puppy": puppy(),
+    "roles": roles(),
     //@endindex
   } as ICommands;
 };
