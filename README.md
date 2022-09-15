@@ -1,6 +1,6 @@
 <img src="repoResources/icon.png" align="right" />
 
-# Bentley [![Discord](https://img.shields.io/discord/844365328574054420.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/84eWHK26CU) [![typescript](https://img.shields.io/badge/made%20with-typescript-blue)](https://img.shields.io/badge/made%20with-typescript-blue)
+# Bentley [![Discord](https://img.shields.io/discord/844365328574054420.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/qt6WTfyZCd) [![typescript](https://img.shields.io/badge/made%20with-typescript-blue)](https://img.shields.io/badge/made%20with-typescript-blue)
 
 > A discord bot built special for Bravo LT
 
